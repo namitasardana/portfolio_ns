@@ -52,46 +52,172 @@
 							</article>
 
 						<!-- Work -->
-							<article id="work" class="panel">
-								<header>
-									<h2>Experience</h2>
-								</header>
 
-								<p>
-									Add a short overview of your professional experience here.
-									You can briefly describe your background, the industries
-									you have worked in, and the type of work you specialize in.
-								</p>
+						<article id="work" class="panel experience">
 
-								<section>
-									<div class="row">
+							<header>
+								<h1>experience</h1>
+							</header>
 
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit">
-												<img src="images/work01.jpg" alt="Work project 1" />
-											</a>
-										</div>
+							<p class="experience-intro">
+								Most of my technical experience has been around data science, machine learning,
+								and applied AI, with my recent internships giving me the chance to work on problems
+								that actually made their way into products and business workflows. At Curious Cat,
+								I worked on turning veterinary clinic data into insights around client behaviour,
+								service patterns, and retention. At Focus Bear, I worked on an NLP-based website
+								filtering system where accuracy had to be balanced against latency, API costs,
+								and the risk of incorrectly blocking useful content. Earlier on, I also worked
+								on a computer vision project through the Entrepreneurship Cell at IIT Kharagpur,
+								and my ongoing role at McDonald's has given me a very different kind of experience
+								in communication, teamwork, problem-solving, and working effectively under pressure.
+							</p>
 
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit">
-												<img src="images/work02.jpg" alt="Work project 2" />
-											</a>
-										</div>
+							<p class="experience-intro">
+								Across these roles, I've generally enjoyed working on the part between an idea and
+								a working solution — understanding the data, figuring out what signals actually matter,
+								testing different approaches, and then turning the result into something practical.
+								That has meant working across data preparation, feature engineering, statistical analysis,
+								machine learning, NLP, computer vision, dashboards, and application workflows rather than
+								sticking to one particular part of the stack.
+							</p>
 
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit">
-												<img src="images/work03.jpg" alt="Work project 3" />
-											</a>
-										</div>
+
+							<section class="experience-section">
+
+								<div class="experience-grid">
+
+									<!-- Curious Cat -->
+
+									<div class="experience-item">
+
+										<header>
+											<h2>Curious Cat</h2>
+											<h3>Data Science Intern · July 2025 – November 2025</h3>
+											<p>Melbourne, Australia</p>
+										</header>
+
+										<p>
+											At Curious Cat, the analytics division of Arrotex Pharmaceuticals, I worked
+											on <strong>VetIQ</strong>, a data-driven platform for veterinary clinics.
+											My work focused on using client and patient data to surface patterns that
+											could help clinics understand behaviour, identify opportunities, and make
+											more informed decisions.
+										</p>
+
+										<p>
+											I led the development of the <strong>Opportunity Radar</strong>, which looked
+											at relationships between the veterinary services clients used rather than
+											considering each service independently. I worked through the underlying
+											<strong>data preparation and feature engineering</strong>, analysed service
+											usage patterns, and translated those relationships into recommendations that
+											could be surfaced directly through the dashboard.
+										</p>
+
+										<p>
+											The interesting part was separating genuinely useful patterns from relationships
+											that were simply present in the data. For example, the analysis could identify
+											service combinations where a consultation was commonly associated with medication,
+											or where preventive care was followed by surgical treatment. These patterns were
+											then turned into practical signals that could help clinics recognise where
+											additional care might be relevant to a particular client.
+										</p>
+
+										<p>
+											I also worked on the <strong>Client Retention Tracker</strong>, improving the
+											signals used to identify clients whose behaviour suggested they might stop
+											returning. This involved working with behavioural features such as
+											<strong>recency, frequency, and monetary value</strong>, and thinking about
+											how changes in those signals could be represented in a way that was useful
+											for an end user rather than just producing another model output.
+										</p>
+
+										<p>
+											Alongside the analytical work, I worked across the wider workflow of getting
+											data into the product — including <strong>data cleaning, transformation,
+											feature preparation, dashboard development, and workflow automation</strong>.
+											This gave me experience with the less visible parts of data science as well:
+											making sure the inputs are reliable, the processing is repeatable, and the
+											results continue to make sense when the underlying data changes.
+										</p>
 
 									</div>
-								</section>
-							</article>
+
+
+									<!-- Focus Bear -->
+
+									<div class="experience-item">
+
+										<header>
+											<h2>Focus Bear</h2>
+											<h3>AI Engineer Intern · November 2024 – March 2025</h3>
+											<p>Melbourne, Australia</p>
+										</header>
+
+										<p>
+											At Focus Bear, I worked on an AI-powered focus application designed to help
+											adults with ADHD and autism manage digital distractions. My main project was
+											a <strong>coarse website-filtering system</strong> that needed to quickly
+											determine whether a website was relevant to what a user was trying to focus on.
+										</p>
+
+										<p>
+											The first version relied on <strong>regex and keyword-based rules</strong>.
+											This made it fast and inexpensive, but it didn't handle context particularly
+											well. A website could contain a relevant keyword without actually being useful
+											for the user's goal, while another relevant website might use completely
+											different wording. I therefore moved the approach towards understanding the
+											<strong>semantic relationship between the user's intention and the website
+											content</strong>.
+										</p>
+
+										<p>
+											I experimented with <strong>BERT-based representations</strong> to capture
+											context and meaning rather than relying solely on lexical matches. This made
+											it possible to treat the user's goal and the website information as related
+											inputs to the classification process, allowing the system to distinguish
+											between superficially similar content with different purposes.
+										</p>
+
+										<p>
+											The final approach combined <strong>deterministic rules with machine-learning
+											signals</strong>. This hybrid design was important because the problem wasn't
+											just about getting the highest possible classification score. The filter had
+											to make decisions quickly, reduce unnecessary <strong>GPT-4o API calls</strong>,
+											control inference costs, and still behave sensibly when presented with websites
+											that hadn't appeared in the training or testing data.
+										</p>
+
+										<p>
+											A large part of the work involved evaluating the trade-offs between
+											<strong>precision, recall, latency, and cost</strong>. I tested different
+											thresholds and approaches, investigated false positives and false negatives,
+											and worked through edge cases where the correct behaviour wasn't immediately
+											obvious. The resulting system improved classification accuracy by approximately
+											<strong>5.5%</strong> while reducing the reliance on a general-purpose LLM
+											for every filtering decision.
+										</p>
+
+										<p>
+											This project gave me practical experience taking an AI feature from a simple
+											heuristic implementation through to a more context-aware NLP system, while
+											dealing with the constraints that come with putting machine learning into an
+											actual product — particularly <strong>inference speed, API cost, model
+											behaviour, edge cases, and reliability on unseen inputs</strong>.
+										</p>
+
+									</div>
+
+								</div>
+
+							</section>
+
+						</article>
+
 
 						<!-- Projects -->
 							<article id="projects" class="panel">
 								<header>
-									<h2>Projects</h2>
+									<h1>projects</h1>
 								</header>
 
 								<p>
@@ -151,7 +277,7 @@
 						<article id="technologies" class="panel technologies">
 
 						<header>
-							<h2>Technologies</h2>
+							<h1>technologies</h1>
 						</header>
 
 						<p class="tech-intro">
@@ -174,7 +300,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>Languages</h3>
+								<h2>languages</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -182,7 +308,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-											Python
+											PYTHON
 										</a>
 									</h4>
 									<p>
@@ -231,7 +357,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">
-											MongoDB
+											MONGODB
 										</a>
 									</h4>
 									<p>
@@ -242,7 +368,7 @@
 
 								<div class="tech-item">
 									<h4>
-										Web
+										WEB
 									</h4>
 									<p>
 										<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
@@ -266,7 +392,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>Data Science &amp; Machine Learning</h3>
+								<h2>data science &amp; machine learning</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -274,7 +400,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">
-											Pandas &amp; NumPy
+											PANDAS &amp; NUMPY
 										</a>
 									</h4>
 									<p>
@@ -286,7 +412,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://scikit-learn.org/" target="_blank" rel="noopener noreferrer">
-											Scikit-learn
+											SCIKIT-LEARN
 										</a>
 									</h4>
 									<p>
@@ -298,11 +424,11 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer">
-											TensorFlow
+											TENSORFLOW
 										</a>
 										&amp;
 										<a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer">
-											PyTorch
+											PYTORCH
 										</a>
 									</h4>
 									<p>
@@ -314,7 +440,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://xgboost.readthedocs.io/" target="_blank" rel="noopener noreferrer">
-											XGBoost
+											XGBOOST
 										</a>
 									</h4>
 									<p>
@@ -326,11 +452,11 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://mlflow.org/" target="_blank" rel="noopener noreferrer">
-											MLflow
+											MLFLOW
 										</a>
 										&amp;
 										<a href="https://wandb.ai/" target="_blank" rel="noopener noreferrer">
-											Weights &amp; Biases
+											WEIGHTS &amp; BIASES
 										</a>
 									</h4>
 									<p>
@@ -349,7 +475,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>AI, NLP &amp; Retrieval</h3>
+								<h2>ai, nlp &amp; retrieval</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -357,7 +483,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">
-											Hugging Face
+											HUGGING FACE
 										</a>
 									</h4>
 									<p>
@@ -369,7 +495,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.langchain.com/" target="_blank" rel="noopener noreferrer">
-											LangChain
+											LANGCHAIN
 										</a>
 									</h4>
 									<p>
@@ -381,7 +507,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://qdrant.tech/" target="_blank" rel="noopener noreferrer">
-											Qdrant
+											QDRANT
 										</a>
 									</h4>
 									<p>
@@ -393,7 +519,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://weaviate.io/" target="_blank" rel="noopener noreferrer">
-											Weaviate
+											WEAVIATE
 										</a>
 									</h4>
 									<p>
@@ -429,7 +555,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://docs.ragas.io/" target="_blank" rel="noopener noreferrer">
-											Ragas
+											RAGAS
 										</a>
 									</h4>
 									<p>
@@ -448,7 +574,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>Cloud &amp; MLOps</h3>
+								<h2>cloud &amp; mlops</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -456,7 +582,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
-											Amazon Web Services
+											AMAZON WEB SERVICES
 										</a>
 									</h4>
 									<p>
@@ -468,7 +594,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer">
-											Google Cloud
+											GOOGLE CLOUD
 										</a>
 									</h4>
 									<p>
@@ -480,7 +606,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://azure.microsoft.com/" target="_blank" rel="noopener noreferrer">
-											Microsoft Azure
+											MICROSOFT AZURE
 										</a>
 									</h4>
 									<p>
@@ -492,7 +618,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">
-											Docker
+											DOCKER
 										</a>
 									</h4>
 									<p>
@@ -511,7 +637,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>Databases &amp; Search</h3>
+								<h2>databases &amp; search</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -519,7 +645,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
-											MySQL
+											MYSQL
 										</a>
 									</h4>
 									<p>
@@ -531,7 +657,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">
-											MongoDB
+											MONGODB
 										</a>
 									</h4>
 									<p>
@@ -543,7 +669,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://planetscale.com/" target="_blank" rel="noopener noreferrer">
-											PlanetScale
+											PLANETSCALE
 										</a>
 									</h4>
 									<p>
@@ -555,7 +681,7 @@
 									<h4>
 										<a href="https://www.elastic.co/elasticsearch"
 										target="_blank" rel="noopener noreferrer">
-											Elasticsearch
+											ELASTICSEARCH
 										</a>
 									</h4>
 									<p>
@@ -567,7 +693,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">
-											Firebase
+											FIERBASE
 										</a>
 									</h4>
 									<p>
@@ -586,7 +712,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>Visualisation</h3>
+								<h2>visualisation</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -594,12 +720,12 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.tableau.com/" target="_blank" rel="noopener noreferrer">
-											Tableau
+											TABLEAU
 										</a>
 										&amp;
 										<a href="https://www.microsoft.com/en-us/power-platform/products/power-bi"
 										target="_blank" rel="noopener noreferrer">
-											Power BI
+											POWER BI
 										</a>
 									</h4>
 									<p>
@@ -611,11 +737,11 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://matplotlib.org/" target="_blank" rel="noopener noreferrer">
-											Matplotlib
+											MATPLOTLIB
 										</a>
 										&amp;
 										<a href="https://seaborn.pydata.org/" target="_blank" rel="noopener noreferrer">
-											Seaborn
+											SEABORN
 										</a>
 									</h4>
 									<p>
@@ -627,7 +753,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://ggplot2.tidyverse.org/" target="_blank" rel="noopener noreferrer">
-											ggplot2
+											GGPLOT2
 										</a>
 									</h4>
 									<p>
@@ -646,7 +772,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>APIs, Applications &amp; Automation</h3>
+								<h2>apis, applications &amp; automation</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -655,12 +781,12 @@
 									<h4>
 										<a href="https://flask.palletsprojects.com/"
 										target="_blank" rel="noopener noreferrer">
-											Flask
+											FLASK
 										</a>
 										&amp;
 										<a href="https://fastapi.tiangolo.com/"
 										target="_blank" rel="noopener noreferrer">
-											FastAPI
+											FASTAPI
 										</a>
 									</h4>
 									<p>
@@ -672,7 +798,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://graphql.org/" target="_blank" rel="noopener noreferrer">
-											GraphQL
+											GRAPHQL
 										</a>
 									</h4>
 									<p>
@@ -684,7 +810,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://n8n.io/" target="_blank" rel="noopener noreferrer">
-											n8n
+											N8N
 										</a>
 									</h4>
 									<p>
@@ -696,7 +822,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://railway.com/" target="_blank" rel="noopener noreferrer">
-											Railway
+											RAILWAY
 										</a>
 									</h4>
 									<p>
@@ -715,7 +841,7 @@
 						<section class="tech-section">
 
 							<header>
-								<h3>Development &amp; Collaboration</h3>
+								<h2>development &amp; collaboration</h2>
 							</header>
 
 							<div class="tech-grid">
@@ -723,11 +849,11 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
-											Git
+											GIT
 										</a>
 										&amp;
 										<a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-											GitHub
+											GITHUB
 										</a>
 									</h4>
 									<p>
@@ -739,7 +865,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://trello.com/" target="_blank" rel="noopener noreferrer">
-											Trello
+											TRELLO
 										</a>
 									</h4>
 									<p>
@@ -751,7 +877,7 @@
 								<div class="tech-item">
 									<h4>
 										<a href="https://www.overleaf.com/" target="_blank" rel="noopener noreferrer">
-											Overleaf
+											OVERLEAF
 										</a>
 									</h4>
 									<p>
