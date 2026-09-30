@@ -1002,6 +1002,161 @@ body.is-preload #wrapper {
     }
 }
 
+/* TECHNOLOGIES */
+
+#main > .panel.technologies {
+    padding-bottom: 1.5em;
+}
+
+.technologies .tech-intro {
+    margin-bottom: 1.25em;
+    font-size: 0.65em;
+    line-height: 1.5em;
+}
+
+
+/* Technology sections */
+
+.technologies .tech-section {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+.technologies .tech-section > header {
+    position: relative;
+    margin-bottom: 0.7em;
+    padding-bottom: .4em;
+}
+
+.technologies .tech-section > header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.5em;
+    border-bottom: solid 2px #ddd;
+}
+
+.technologies .tech-section h3 {
+    font-size: 0.9em;
+    letter-spacing: -.015em;
+}
+
+
+/* Technology grid */
+
+.technologies .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5em;
+    row-gap: 1.15em;
+}
+
+
+/* Individual technology */
+
+.technologies .tech-item {
+    margin: 0;
+}
+
+.technologies .tech-item h4 {
+    margin: 0 0 .2em;
+    font-size: 0.72em;
+    line-height: 1.3em;
+    font-weight: 400;
+    color: #363636;
+}
+
+
+/* Technology name links */
+
+.technologies .tech-item h4 a,
+.technologies .tech-item h4 a:visited {
+    color: #363636;
+    border-bottom: solid 1px #bbb;
+    text-decoration: none;
+    transition:
+        color .2s ease-in-out,
+        border-color .2s ease-in-out;
+}
+
+.technologies .tech-item h4 a:hover {
+    color: #111;
+    border-color: #363636;
+}
+
+
+/* Technology descriptions */
+
+.technologies .tech-item p {
+    margin: 0;
+    font-size: 0.57em;
+    line-height: 1.45em;
+    color: #888;
+}
+
+
+/* Links inside descriptions */
+
+.technologies .tech-item p a,
+.technologies .tech-item p a:visited {
+    color: #888;
+    text-decoration: underline;
+    text-decoration-color: #bbb;
+    text-underline-offset: .15em;
+}
+
+.technologies .tech-item p a:hover {
+    color: #363636;
+}
+
+
+/* Keep all Technologies links neutral */
+
+.technologies a,
+.technologies a:visited {
+    color: #363636;
+}
+
+
+/* Technology page on smaller screens */
+
+@media screen and (max-width: 736px) {
+
+    #main > .panel.technologies {
+        padding-bottom: 1.5em;
+    }
+
+    .technologies .tech-intro {
+        margin-bottom: 1.25em;
+        font-size: .8em;
+    }
+
+    .technologies .tech-section {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .technologies .tech-section > header {
+        margin-bottom: .7em;
+    }
+
+    .technologies .tech-grid {
+        grid-template-columns: 1fr;
+        row-gap: 1.25em;
+    }
+
+    .technologies .tech-item h4 {
+        font-size: .85em;
+    }
+
+    .technologies .tech-item p {
+        font-size: .75em;
+        line-height: 1.5em;
+    }
+}
+
+
 
 /*FOOTER*/
 
