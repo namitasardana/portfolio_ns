@@ -78,50 +78,68 @@
 										</header>
 
 										<p>
-											At Curious Cat, the analytics division of Arrotex Pharmaceuticals, I worked
-											on <strong>VetIQ</strong>, a data-driven platform for veterinary clinics.
-											My work focused on using client and patient data to surface patterns that
-											could help clinics understand behaviour, identify opportunities, and make
-											more informed decisions.
+											At Curious Cat, the analytics division of Arrotex Pharmaceuticals, I worked on
+											<strong>VetIQ</strong>, a data-driven platform for veterinary clinics. I was working
+											with around <strong>1 million records across 5 clinics</strong>, and a lot of my work
+											came down to figuring out what we could actually learn from the way clients and their
+											pets interacted with a clinic.
 										</p>
 
 										<p>
-											I led the development of the <strong>Opportunity Radar</strong>, which looked
-											at relationships between the veterinary services clients used rather than
-											considering each service independently. I worked through the underlying
-											<strong>data preparation and feature engineering</strong>, analysed service
-											usage patterns, and translated those relationships into recommendations that
-											could be surfaced directly through the dashboard.
+											One of the things I led was the <strong>Opportunity Radar</strong>, which started from
+											an idea I had during the internship. I didn't want to look at services independently
+											and just report how often each one was being used. I was more interested in the
+											relationships between them, what services tend to appear together, what patterns exist
+											in the way clients use different services, and whether those patterns could point to an
+											opportunity for a clinic.
 										</p>
 
 										<p>
-											The interesting part was separating genuinely useful patterns from relationships
-											that were simply present in the data. For example, the analysis could identify
-											service combinations where a consultation was commonly associated with medication,
-											or where preventive care was followed by surgical treatment. These patterns were
-											then turned into practical signals that could help clinics recognise where
-											additional care might be relevant to a particular client.
+											I started by working through the transaction data and figuring out how to represent
+											service usage in a way that made sense for the analysis. I used <strong>K-Means</strong>
+											to explore groups of similar service usage behaviour and <strong>Apriori association
+											rule mining</strong> to find relationships between services. That led to patterns such as
+											<strong>Consultation leading to Medication</strong> and <strong>Preventive Care directing towards the next visit being for a Surgery</strong>.
 										</p>
 
 										<p>
-											I also worked on the <strong>Client Retention Tracker</strong>, improving the
-											signals used to identify clients whose behaviour suggested they might stop
-											returning. This involved working with behavioural features such as
-											<strong>recency, frequency, and monetary value</strong>, and thinking about
-											how changes in those signals could be represented in a way that was useful
-											for an end user rather than just producing another model output.
+											Finding those relationships was only part of it. The analysis could produce a lot of
+											different associations, so I worked through <strong>support, confidence and lift</strong>,
+											along with the actual frequency of the services, to separate the more meaningful patterns
+											from relationships that weren't particularly useful. I then worked on turning those into
+											opportunity signals that could be shown through the VetIQ dashboard rather than leaving
+											them as raw association rules.
 										</p>
 
 										<p>
-											Alongside the analytical work, I worked across the wider workflow of getting
-											data into the product — including <strong>data cleaning, transformation,
-											feature preparation, dashboard development, and workflow automation</strong>.
-											This gave me experience with the less visible parts of data science as well:
-											making sure the inputs are reliable, the processing is repeatable, and the
-											results continue to make sense when the underlying data changes.
+											I also contributed to the <strong>Client Retention Tracker</strong>, working alongside
+											the person leading that piece. The idea was to see whether changes in a client's behaviour
+											could give us an indication that they might not return to the clinic. I worked with
+											transaction history to build <strong>recency, frequency and monetary value features</strong>,
+											looking at how recently and how often someone visited and how their spending behaviour
+											changed over time.
+										</p>
+
+										<p>
+											I was also involved in working out how to use the retention predictions in the
+											<strong>Retention Tracker</strong>, rather than simply putting a model score in front
+											of someone. The goal was to make changes in client behaviour easier to spot and understand
+											through the dashboard.
+										</p>
+
+										<p>
+											What I liked about these two pieces was that they weren't just exercises in trying
+											different models. With Opportunity Radar, I was trying to find patterns in the way
+											services were being used that weren't obvious from looking at individual services.
+											With the Retention Tracker, I was looking at how a client's behaviour changed over time.
+											In both cases, a lot of the work was in getting the underlying data into a form that
+											could actually answer those questions, deciding which patterns were worth paying
+											attention to, and then figuring out how to present the results in a way that made sense
+											outside of a notebook.
 										</p>
 
 									</div>
+
 
 
 									<!-- Focus Bear -->
@@ -182,7 +200,7 @@
 											This project gave me practical experience taking an AI feature from a simple
 											heuristic implementation through to a more context-aware NLP system, while
 											dealing with the constraints that come with putting machine learning into an
-											actual product — particularly <strong>inference speed, API cost, model
+											actual product, particularly <strong>inference speed, API cost, model
 											behaviour, edge cases, and reliability on unseen inputs</strong>.
 										</p>
 
