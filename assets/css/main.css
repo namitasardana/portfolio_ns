@@ -963,7 +963,7 @@ body.is-preload #wrapper {
 #main > .panel.intro header p {
     margin: .5em 0 1em;
     letter-spacing: -.0009em;
-	line-height: 1.5em;
+    line-height: 1.5em;
     font-size: 0.65em;
 }
 
@@ -1001,6 +1001,119 @@ body.is-preload #wrapper {
         font-size: .8em;
     }
 }
+
+
+/* EXPERIENCE */
+
+#main > .panel.experience {
+    padding-bottom: 2.5em;
+}
+
+#main > .panel.experience > header {
+    margin-bottom: 1.5em;
+}
+
+#main > .panel.experience > header h1 {
+    line-height: 1.25em;
+}
+
+.experience-intro {
+    margin: .5em 0 1.5em;
+    letter-spacing: -.0009em;
+    line-height: 1.5em;
+    font-size: 0.65em;
+}
+
+.experience-section {
+    margin-bottom: 0;
+}
+
+.experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25em;
+}
+
+.experience-item {
+    margin: 0;
+}
+
+.experience-item header {
+    margin-bottom: 1em;
+}
+
+.experience-item header h2 {
+    margin-bottom: .15em;
+    line-height: 1.25em;
+}
+
+.experience-item header h3 {
+    margin: 0;
+    font-size: 0.65em;
+    line-height: 1.4em;
+    color: #777;
+}
+
+.experience-item header p {
+    margin-top: .25em;
+    font-size: 0.55em;
+    line-height: 1.4em;
+    color: #aaa;
+}
+
+.experience-item > p {
+    margin: 0 0 1.15em;
+    letter-spacing: -.0009em;
+    line-height: 1.5em;
+    font-size: 0.65em;
+}
+
+.experience-item > p:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 736px) {
+
+    #main > .panel.experience {
+        padding-bottom: 1.5em;
+    }
+
+    #main > .panel.experience > header {
+        margin-bottom: 1.25em;
+    }
+
+    .experience-intro {
+        margin: .25em 0 1.25em;
+        font-size: .8em;
+    }
+
+    .experience-grid {
+        gap: 1.75em;
+    }
+
+    .experience-item header {
+        margin-bottom: .8em;
+    }
+
+    .experience-item header h2 {
+        font-size: calc(1.375em * 0.8);
+    }
+
+    .experience-item header h3 {
+        font-size: .75em;
+    }
+
+    .experience-item header p {
+        font-size: .65em;
+    }
+
+    .experience-item > p {
+        margin-bottom: 1em;
+        font-size: .8em;
+        line-height: 1.5em;
+    }
+}
+
 
 /* TECHNOLOGIES */
 
