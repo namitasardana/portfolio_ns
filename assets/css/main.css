@@ -1339,3 +1339,97 @@ body.is-preload #wrapper {
         font-size: 0.72em;
     }
 }
+/* PROJECTS */
+
+.projects .project-intro {
+    margin: .5em 0 1.5em;
+    letter-spacing: -.0009em;
+    line-height: 1.5em;
+    font-size: 0.65em;
+}
+
+.projects .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects .project-item {
+    margin: 0;
+}
+
+/* Project title */
+
+.projects .project-item h3 {
+    margin: 0 0 .35em;
+    font-size: 0.8em;
+    line-height: 1.25em;
+    letter-spacing: -.015em;
+}
+
+/* Project subtitle */
+
+.projects .project-item > p strong {
+    font-weight: 400;
+    color: #363636;
+}
+
+.projects .project-item > p:first-of-type {
+    margin: 0 0 1em;
+    font-size: 0.55em;
+    line-height: 1.4em;
+    color: #aaa;
+}
+
+/* Project description */
+
+.projects .project-item > p:not(:first-of-type) {
+    margin: 0 0 1.15em;
+    letter-spacing: -.0009em;
+    line-height: 1.5em;
+    font-size: 0.65em;
+    color: #777;
+}
+
+.projects .project-item > p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Keep the 3-card layout */
+
+.projects .project-item {
+    width: 33.333333%;
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 980px) {
+
+    .projects .project-item {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 736px) {
+
+    .projects .project-item {
+        width: 100%;
+    }
+
+    .projects .project-item h3 {
+        font-size: calc(1.375em * 0.8);
+    }
+
+    .projects .project-item > p:first-of-type {
+        font-size: .65em;
+    }
+
+    .projects .project-item > p:not(:first-of-type) {
+        margin-bottom: 1em;
+        font-size: .8em;
+        line-height: 1.5em;
+    }
+
+}

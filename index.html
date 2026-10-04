@@ -213,253 +213,259 @@
 						</article>
 
 
-						<!-- Projects --> 
-						<article id="projects" class="panel"> 
-							<header> 
-								<h1>projects</h1> 
+						<!-- Projects -->
+						<article id="projects" class="panel projects">
+
+							<header>
+								<h1>projects</h1>
 							</header>
-						<p>
-							These are some of the projects I have been working on recently, covering areas
-							like sports analytics, applied AI, and environmental data. They are quite
-							different in what they are trying to solve, but most of them have involved the
-							same general process for me: understanding the problem first, figuring out what
-							the data can actually tell me, experimenting with different approaches, and then
-							turning the results into something that is useful beyond just the model itself.
-						</p>
 
-						<section>
-							<div class="row">
+							<p class="project-intro">
+								These are some of the projects I have been working on recently, covering areas
+								like sports analytics, applied AI, and environmental data. They are quite
+								different in what they are trying to solve, but most of them have involved the
+								same general process for me: understanding the problem first, figuring out what
+								the data can actually tell me, experimenting with different approaches, and then
+								turning the results into something that is useful beyond just the model itself.
+							</p>
 
-								<!-- T20 Match Engine --> 
-								
-								<div class="col-4 col-6-medium col-12-small"> 
-									<a href="#" class="image fit"> 
-										<img src="images/project01.jpg" alt="T20 Match Engine" /> 
-									</a>
-								
-								<h3>T20 Match Engine</h3>
+							<section>
+								<div class="row">
 
-									<p>
-										<strong>Sports Analytics Framework</strong>
-									</p>
+									<!-- T20 Match Engine -->
 
-									<p>
-										The T20 Match Engine started from an interest in looking at cricket
-										through something more meaningful than traditional scorecard statistics.
-										I spent some time researching how professional cricket analytics platforms
-										such as <strong>CricViz</strong> approach performance evaluation and used
-										that as a starting point for thinking about what I could build and improve
-										upon myself. A batter scoring 40 runs, for example, doesn't tell us much on
-										its own about whether those runs came when the team needed them most, while a
-										fielder's contribution can be difficult to capture through standard
-										statistics at all. I wanted to build a system that could take the
-										<strong>match situation into account</strong> when evaluating what
-										actually happened on the field.
-									</p>
+									<div class="col-4 col-6-medium col-12-small project-item">
 
-									<p>
-										I approached the problem by treating the two innings differently rather
-										than trying to force them into one model. For the first innings, I built
-										an <strong>XGBoost regression model</strong> to estimate the expected
-										final score from information available at each point in the innings,
-										including match state, venue conditions, scoring rate, and the phase of
-										the game. This became the basis for <strong>Expected Score (eScore)</strong>
-										and allowed me to compare a batter's actual contribution against what
-										would normally have been expected from that situation.
-									</p>
+										<a href="#" class="image fit">
+											<img src="images/project01.jpg" alt="T20 Match Engine" />
+										</a>
 
-									<p>
-										For the second innings, the question changes from "how many runs will
-										this team score?" to "how likely are they to win from here?". I therefore
-										built a separate <strong>XGBoost classifier</strong> that continuously
-										estimates <strong>Win Probability (WP)</strong> throughout a chase.
-										From this, I could look at how individual deliveries changed the outcome
-										of the match and use that to calculate <strong>Win Probability Added
-										(WPA)</strong> for players.
-									</p>
+										<h3>T20 Match Engine</h3>
 
-									<p>
-										Once those two models were working, I used their outputs to build some
-										of the other metrics I was interested in. These include
-										<strong>Runs Above Expectation (RAE)</strong> for batters,
-										<strong>Expected Runs Saved (ERS)</strong> for fielders, and a
-										dynamic <strong>Leverage Index (LI)</strong> that measures how much
-										pressure a particular delivery carries based on the state of the match.
-										I also experimented with a <strong>Clutch Score</strong> for weighting
-										performances in high-pressure situations and a <strong>Pressure Index</strong>
-										to capture the cumulative effect of things like consecutive dot balls.
-									</p>
+										<p>
+											<strong>Sports Analytics Framework</strong>
+										</p>
 
-									<p>
-										A big part of the project has been making sure these metrics actually
-										lead to useful analysis rather than just producing more numbers. The
-										framework can be used to compare players in context, identify
-										game-defining deliveries, and break down team performance across the
-										<strong>powerplay, middle overs, and death overs</strong>. I have also
-										been working towards presenting the outputs through a dashboard so that
-										the analysis can move naturally from first-innings target projection
-										to live win probability during the chase.
-									</p>
+										<p>
+											The T20 Match Engine started from an interest in looking at cricket
+											through something more meaningful than traditional scorecard statistics.
+											I spent some time researching how professional cricket analytics platforms
+											such as <strong>CricViz</strong> approach performance evaluation and used
+											that as a starting point for thinking about what I could build and improve
+											upon myself. A batter scoring 40 runs, for example, doesn't tell us much on
+											its own about whether those runs came when the team needed them most, while a
+											fielder's contribution can be difficult to capture through standard
+											statistics at all. I wanted to build a system that could take the
+											<strong>match situation into account</strong> when evaluating what
+											actually happened on the field.
+										</p>
 
-									<p>
-										What I find particularly interesting about this project is that the
-										underlying idea isn't limited to cricket. The same approach can be
-										adapted to other sports where the game can be viewed as a sequence of
-										phases or possessions. In basketball, for example, the same framework
-										could be extended towards <strong>expected possession value, live win
-										probability, leverage, and late-game decision making</strong>.
-									</p>
+										<p>
+											I approached the problem by treating the two innings differently rather
+											than trying to force them into one model. For the first innings, I built
+											an <strong>XGBoost regression model</strong> to estimate the expected
+											final score from information available at each point in the innings,
+											including match state, venue conditions, scoring rate, and the phase of
+											the game. This became the basis for <strong>Expected Score (eScore)</strong>
+											and allowed me to compare a batter's actual contribution against what
+											would normally have been expected from that situation.
+										</p>
+
+										<p>
+											For the second innings, the question changes from "how many runs will
+											this team score?" to "how likely are they to win from here?". I therefore
+											built a separate <strong>XGBoost classifier</strong> that continuously
+											estimates <strong>Win Probability (WP)</strong> throughout a chase.
+											From this, I could look at how individual deliveries changed the outcome
+											of the match and use that to calculate <strong>Win Probability Added
+											(WPA)</strong> for players.
+										</p>
+
+										<p>
+											Once those two models were working, I used their outputs to build some
+											of the other metrics I was interested in. These include
+											<strong>Runs Above Expectation (RAE)</strong> for batters,
+											<strong>Expected Runs Saved (ERS)</strong> for fielders, and a
+											dynamic <strong>Leverage Index (LI)</strong> that measures how much
+											pressure a particular delivery carries based on the state of the match.
+											I also experimented with a <strong>Clutch Score</strong> for weighting
+											performances in high-pressure situations and a <strong>Pressure Index</strong>
+											to capture the cumulative effect of things like consecutive dot balls.
+										</p>
+
+										<p>
+											A big part of the project has been making sure these metrics actually
+											lead to useful analysis rather than just producing more numbers. The
+											framework can be used to compare players in context, identify
+											game-defining deliveries, and break down team performance across the
+											<strong>powerplay, middle overs, and death overs</strong>. I have also
+											been working towards presenting the outputs through a dashboard so that
+											the analysis can move naturally from first-innings target projection
+											to live win probability during the chase.
+										</p>
+
+										<p>
+											What I find particularly interesting about this project is that the
+											underlying idea isn't limited to cricket. The same approach can be
+											adapted to other sports where the game can be viewed as a sequence of
+											phases or possessions. In basketball, for example, the same framework
+											could be extended towards <strong>expected possession value, live win
+											probability, leverage, and late-game decision making</strong>.
+										</p>
+
+									</div>
+
+
+									<!-- Eunoia -->
+
+									<div class="col-4 col-6-medium col-12-small project-item">
+
+										<a href="#" class="image fit">
+											<img src="images/project02.jpg" alt="Eunoia RAG Chatbot" />
+										</a>
+
+										<h3>Eunoia</h3>
+
+										<p>
+											<strong>RAG Chatbot for Mental Health Support</strong>
+										</p>
+
+										<p>
+											Eunoia came out of a university group project where we wanted to explore
+											how conversational AI could be used to support mental wellbeing without
+											trying to replace professional or clinical support. The main challenge
+											wasn't simply getting a language model to generate a response. We wanted
+											to build something that could respond in a way that was
+											<strong>grounded in reliable information</strong> while also knowing
+											when it shouldn't try to answer.
+										</p>
+
+										<p>
+											We built the system around a <strong>Retrieval Augmented Generation
+											(RAG) pipeline</strong> running locally through Ollama. I worked with
+											<strong>nomic-embed-text</strong> to generate embeddings for the
+											knowledge base and <strong>FAISS</strong> to index and retrieve
+											relevant information. <strong>Mistral</strong> was then used to
+											generate responses based on the retrieved context rather than relying
+											entirely on the model's own knowledge.
+										</p>
+
+										<p>
+											The knowledge base combined curated psychological guides and coping
+											resources with a <strong>questions.csv</strong> dataset containing
+											conversational examples and human-aligned responses. This gave us
+											two different types of information to work with: factual resources
+											that could ground the model and examples that helped it understand
+											the sort of language people might actually use when talking about
+											their wellbeing.
+										</p>
+
+										<p>
+											One of the things we found early on was that straightforward keyword
+											matching wasn't enough for the sort of queries we wanted Eunoia to
+											handle. Someone saying they feel "burnt out but not sad", for example,
+											needs a response based on the meaning of the query rather than simply
+											the words it contains. Using semantic embeddings allowed the retrieval
+											layer to find information based on <strong>context and meaning</strong>,
+											and our approach improved contextual retrieval precision by more than
+											<strong>5%</strong> compared with the baseline we started with.
+										</p>
+
+										<p>
+											We also built a feedback loop around the system so that responses could
+											be evaluated and used to improve the retrieval process. Through this
+											refinement, retrieval accuracy improved by around <strong>8%</strong>,
+											while helpfulness improved by approximately <strong>2%</strong>.
+											This was useful because it gave us a way to evaluate the system based
+											on how people actually experienced the responses rather than only
+											looking at technical retrieval metrics.
+										</p>
+
+										<p>
+											Safety was another important part of the design. If the system isn't
+											confident enough in the information it has retrieved, it doesn't simply
+											generate an answer and hope for the best. Instead, a
+											<strong>safety fallback</strong> redirects the user towards trusted
+											support services such as Lifeline or Headspace. For me, this was one
+											of the more important parts of the project because it showed how the
+											design of an AI system has to account for what happens when the model
+											isn't reliable, rather than only focusing on what happens when it works.
+										</p>
+
+									</div>
+
+
+									<!-- CarbonWise -->
+
+									<div class="col-4 col-6-medium col-12-small project-item">
+
+										<a href="#" class="image fit">
+											<img src="images/project03.jpg" alt="CarbonWise Environmental Impact Tracker" />
+										</a>
+
+										<h3>CarbonWise</h3>
+
+										<p>
+											<strong>Personal Environmental Impact Tracker</strong>
+										</p>
+
+										<p>
+											CarbonWise started from a fairly simple question: how much carbon do
+											we actually produce just from getting around every day? I originally
+											planned to use my Google Maps Takeout data to reconstruct my own travel
+											history, but because location tracking had been turned off, I didn't
+											have enough real historical data to work with. Instead of abandoning
+											the idea, I built a <strong>synthetic 23-year travel history</strong>
+											that represented different stages of my life, from childhood trips
+											and school buses through to university commutes and part-time work.
+										</p>
+
+										<p>
+											I used that data to build a dashboard that breaks down the resulting
+											travel behaviour and emissions. It tracks <strong>total CO₂ emissions,
+											distance travelled, transport modes, flight emissions, and monthly
+											emissions</strong>, while also comparing actual emissions against a
+											personal monthly target. The idea was to make the numbers easier to
+											understand by showing not just a total footprint, but where that
+											footprint was actually coming from.
+										</p>
+
+										<p>
+											I also wanted the project to go a step further than simply telling
+											someone that their emissions are high. I built a
+											<strong>decision tree model</strong> that looks at things like trip
+											distance, the type of journey, and its potential environmental impact
+											to determine when alternatives such as walking, cycling, or public
+											transport might make sense. This means the dashboard can move from
+											describing past behaviour to suggesting what could be changed.
+										</p>
+
+										<p>
+											Another part of the project was making the system usable beyond my
+											own simulated travel history. Users can add their own trips and have
+											the same calculations and recommendations applied to them. This meant
+											thinking about the project less as a one-off analysis and more as a
+											small data application, where new inputs need to pass through the same
+											processing and modelling pipeline before being turned into something
+											meaningful.
+										</p>
+
+										<p>
+											What I liked about CarbonWise was that it gave me a chance to work on
+											a project where the model is only one part of the solution. The more
+											interesting challenge was connecting <strong>data generation,
+											emissions calculations, machine learning, and visualisation</strong>
+											so that someone could actually use the results to understand their
+											own behaviour and think about possible alternatives.
+										</p>
+
+									</div>
 
 								</div>
-
-
-								<!-- Eunoia -->
-
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="#" class="image fit">
-										<img src="images/project02.jpg" alt="Eunoia RAG Chatbot" />
-									</a>
-
-									<h3>Eunoia</h3>
-
-									<p>
-										<strong>RAG Chatbot for Mental Health Support</strong>
-									</p>
-
-									<p>
-										Eunoia came out of a university group project where we wanted to explore
-										how conversational AI could be used to support mental wellbeing without
-										trying to replace professional or clinical support. The main challenge
-										wasn't simply getting a language model to generate a response. We wanted
-										to build something that could respond in a way that was
-										<strong>grounded in reliable information</strong> while also knowing
-										when it shouldn't try to answer.
-									</p>
-
-									<p>
-										We built the system around a <strong>Retrieval Augmented Generation
-										(RAG) pipeline</strong> running locally through Ollama. I worked with
-										<strong>nomic-embed-text</strong> to generate embeddings for the
-										knowledge base and <strong>FAISS</strong> to index and retrieve
-										relevant information. <strong>Mistral</strong> was then used to
-										generate responses based on the retrieved context rather than relying
-										entirely on the model's own knowledge.
-									</p>
-
-									<p>
-										The knowledge base combined curated psychological guides and coping
-										resources with a <strong>questions.csv</strong> dataset containing
-										conversational examples and human-aligned responses. This gave us
-										two different types of information to work with: factual resources
-										that could ground the model and examples that helped it understand
-										the sort of language people might actually use when talking about
-										their wellbeing.
-									</p>
-
-									<p>
-										One of the things we found early on was that straightforward keyword
-										matching wasn't enough for the sort of queries we wanted Eunoia to
-										handle. Someone saying they feel "burnt out but not sad", for example,
-										needs a response based on the meaning of the query rather than simply
-										the words it contains. Using semantic embeddings allowed the retrieval
-										layer to find information based on <strong>context and meaning</strong>,
-										and our approach improved contextual retrieval precision by more than
-										<strong>5%</strong> compared with the baseline we started with.
-									</p>
-
-									<p>
-										We also built a feedback loop around the system so that responses could
-										be evaluated and used to improve the retrieval process. Through this
-										refinement, retrieval accuracy improved by around <strong>8%</strong>,
-										while helpfulness improved by approximately <strong>2%</strong>.
-										This was useful because it gave us a way to evaluate the system based
-										on how people actually experienced the responses rather than only
-										looking at technical retrieval metrics.
-									</p>
-
-									<p>
-										Safety was another important part of the design. If the system isn't
-										confident enough in the information it has retrieved, it doesn't simply
-										generate an answer and hope for the best. Instead, a
-										<strong>safety fallback</strong> redirects the user towards trusted
-										support services such as Lifeline or Headspace. For me, this was one
-										of the more important parts of the project because it showed how the
-										design of an AI system has to account for what happens when the model
-										isn't reliable, rather than only focusing on what happens when it works.
-									</p>
-
-								</div>
-
-
-								<!-- CarbonWise -->
-
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="#" class="image fit">
-										<img src="images/project03.jpg" alt="CarbonWise Environmental Impact Tracker" />
-									</a>
-
-									<h3>CarbonWise</h3>
-
-									<p>
-										<strong>Personal Environmental Impact Tracker</strong>
-									</p>
-
-									<p>
-										CarbonWise started from a fairly simple question: how much carbon do
-										we actually produce just from getting around every day? I originally
-										planned to use my Google Maps Takeout data to reconstruct my own travel
-										history, but because location tracking had been turned off, I didn't
-										have enough real historical data to work with. Instead of abandoning
-										the idea, I built a <strong>synthetic 23-year travel history</strong>
-										that represented different stages of my life, from childhood trips
-										and school buses through to university commutes and part-time work.
-									</p>
-
-									<p>
-										I used that data to build a dashboard that breaks down the resulting
-										travel behaviour and emissions. It tracks <strong>total CO₂ emissions,
-										distance travelled, transport modes, flight emissions, and monthly
-										emissions</strong>, while also comparing actual emissions against a
-										personal monthly target. The idea was to make the numbers easier to
-										understand by showing not just a total footprint, but where that
-										footprint was actually coming from.
-									</p>
-
-									<p>
-										I also wanted the project to go a step further than simply telling
-										someone that their emissions are high. I built a
-										<strong>decision tree model</strong> that looks at things like trip
-										distance, the type of journey, and its potential environmental impact
-										to determine when alternatives such as walking, cycling, or public
-										transport might make sense. This means the dashboard can move from
-										describing past behaviour to suggesting what could be changed.
-									</p>
-
-									<p>
-										Another part of the project was making the system usable beyond my
-										own simulated travel history. Users can add their own trips and have
-										the same calculations and recommendations applied to them. This meant
-										thinking about the project less as a one-off analysis and more as a
-										small data application, where new inputs need to pass through the same
-										processing and modelling pipeline before being turned into something
-										meaningful.
-									</p>
-
-									<p>
-										What I liked about CarbonWise was that it gave me a chance to work on
-										a project where the model is only one part of the solution. The more
-										interesting challenge was connecting <strong>data generation,
-										emissions calculations, machine learning, and visualisation</strong>
-										so that someone could actually use the results to understand their
-										own behaviour and think about possible alternatives.
-									</p>
-
-								</div>
-
-							</div>
-						</section>
+							</section>
 
 						</article>
+
 
 						<!-- Technologies -->
 
